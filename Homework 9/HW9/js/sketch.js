@@ -5,6 +5,11 @@ function setup(){
 function draw(){
     background(76,0,153);
 
+    push();
+    textSize(12);
+    fill(128,255,0);
+    text('Dyami Clemente',0,590);
+    pop();
     //eye r
     strokeWeight(6);
     fill(300,150,180);
