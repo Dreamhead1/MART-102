@@ -10,7 +10,7 @@ var rbrowY =120;
 var rbrowXB =450;
 var rbrowYB =100;
 var movementC =1;
-var nameSize =12;
+var nameSize =10;
 var movementB;
 
 function setup(){
@@ -295,7 +295,7 @@ pop();
 
     push();
     textSize(nameSize);
-    if(nameSize >=32||nameSize<=2){
+    if(nameSize >=50||nameSize<=2){
         movementB*=-1
     }
     nameSize +=movementB;
