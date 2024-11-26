@@ -13,12 +13,14 @@ var rY =400;
 var mousex =0;
 var mousey =0;
 
-var myXs= [];
-var myYs= [];
-var myDiameters = [];
+var xXs= [];
+var xYs= [];
+var xDiameters = [];
 var red = [];
 var blue = [];
 var green = [];
+var xMVMT = [];
+var yMVMT = [];
 
 //array var
 
@@ -28,9 +30,11 @@ var green = [];
       createCanvas(800, 600);
       //loop
       for(var i =0; i < 5; i++){
-        myXs [i] = getRandomNumber(800);
-        myYs [i] = getRandomNumber(600);
-        myDiameters [i] = getRandomNumber(100);
+        xMVMT[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+        yMVMT[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+        xXs [i] = getRandomNumber(800);
+        xYs [i] = getRandomNumber(600);
+        xDiameters [i] = getRandomNumber(100);
         red [i] = getRandomNumber(250);
         blue [i] = getRandomNumber(250);
         green [i] = getRandomNumber(250);
@@ -42,11 +46,32 @@ var green = [];
     {
       background(100,0,150);
       
-      for(var i = 0; i < myXs.length; i++)
+      for(var i = 0; i < xXs.length; i++)
         {
-          // concentric circle randomly using arrays
           fill(red[1], green [i], blue [i]);
-          circle(myXs[i], myYs[i], myDiameters[i]);
+          circle(xXs[i], xYs[i], xDiameters[i]);
+          xMVMT[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+          yMVMT[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+  
+  
+  
+  
+        
+          xXs[i] += xMVMT[i];
+          xYs[i] += yMVMT[i];
+         
+          if (xXs[i] > width) {
+              xXs[i] = 0;
+          }
+          if (xXs[i] < 0) {
+              xXs[i] = width;
+          }
+          if (xYs[i] > height) {
+              xYs[i] = 0;
+          }
+          if (xYs[i] < 0) {
+              xYs[i] = height;
+          }
         }
 
 createPlayer();
