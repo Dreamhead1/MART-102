@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Courier; color: #ffffff; -webkit-text-stroke: #ffffff}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Courier; color: #ffffff; -webkit-text-stroke: #ffffff; min-height: 16.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">var x =400;</span></p>
+<p class="p1"><span class="s1">var y =570;</span></p>
+<p class="p1"><span class="s1">var diameter = 50;</span></p>
+<p class="p1"><span class="s1">var diameterA = 25;</span></p>
+<p class="p1"><span class="s1">var lLX =390;</span></p>
+<p class="p1"><span class="s1">var lLY =450;</span></p>
+<p class="p1"><span class="s1">var rLX =400;</span></p>
+<p class="p1"><span class="s1">var rLY =450;</span></p>
+<p class="p1"><span class="s1">var cX =30;</span></p>
+<p class="p1"><span class="s1">var cY =30;</span></p>
+<p class="p1"><span class="s1">var rX =30;</span></p>
+<p class="p1"><span class="s1">var rY =400;</span></p>
+<p class="p1"><span class="s1">var mousex =0;</span></p>
+<p class="p1"><span class="s1">var mousey =0;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">var xXs= [];</span></p>
+<p class="p1"><span class="s1">var xYs= [];</span></p>
+<p class="p1"><span class="s1">var xDiameters = [];</span></p>
+<p class="p1"><span class="s1">var red = [];</span></p>
+<p class="p1"><span class="s1">var blue = [];</span></p>
+<p class="p1"><span class="s1">var green = [];</span></p>
+<p class="p1"><span class="s1">var xMVMT = [];</span></p>
+<p class="p1"><span class="s1">var yMVMT = [];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">//array var</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function setup()<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>createCanvas(800, 600);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>//loop</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>for(var i =0; i &lt; 5; i++){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>xMVMT[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>yMVMT[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>xXs [i] = getRandomNumber(800);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>xYs [i] = getRandomNumber(600);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>xDiameters [i] = getRandomNumber(100);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>red [i] = getRandomNumber(250);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>blue [i] = getRandomNumber(250);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>green [i] = getRandomNumber(250);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function draw()<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background(100,0,150);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>for(var i = 0; i &lt; xXs.length; i++)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>fill(red[1], green [i], blue [i]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>circle(xXs[i], xYs[i], xDiameters[i]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>xMVMT[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>yMVMT[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>xXs[i] += xMVMT[i];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>xYs[i] += yMVMT[i];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">         </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (xXs[i] &gt; width) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>xXs[i] = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (xXs[i] &lt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>xXs[i] = width;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (xYs[i] &gt; height) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>xYs[i] = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (xYs[i] &lt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>xYs[i] = height;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">createPlayer();</span></p>
+<p class="p1"><span class="s1">createObstacles();</span></p>
+<p class="p1"><span class="s1">createBorders(0,800,600);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>/*walls</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>A = 0</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>B =800</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>C =600</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>*/</span></p>
+<p class="p1"><span class="s1">createSummon();</span></p>
+<p class="p1"><span class="s1">createExit();</span></p>
+<p class="p1"><span class="s1">createYouwin();</span></p>
+<p class="p1"><span class="s1">getRandomNumber(i);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">function createPlayer(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/*</span></p>
+<p class="p1"><span class="s1">player model</span></p>
+<p class="p1"><span class="s1">w =87</span></p>
+<p class="p1"><span class="s1">a=65</span></p>
+<p class="p1"><span class="s1">s=83</span></p>
+<p class="p1"><span class="s1">d=68</span></p>
+<p class="p1"><span class="s1">space=32</span></p>
+<p class="p1"><span class="s1">*/</span></p>
+<p class="p1"><span class="s1">fill(250,0,0);</span></p>
+<p class="p1"><span class="s1">circle(x,y,diameter);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">fill(0);</span></p>
+<p class="p1"><span class="s1">circle(x,y,diameterA);</span></p>
+<p class="p1"><span class="s1">if(keyIsDown(87)){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>y-=10;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">if(keyIsDown(83)){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>y+=10;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">if(keyIsDown(65)){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>x-=10;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">if(keyIsDown(68)){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>x+=10;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function createSummon(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>//summon circle</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>fill(150,50,0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>circle(mousex, mousey, 50);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>circle(mousex, mousey, 20);</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function createObstacles(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>//obstacles</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>fill(100,90,200);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>circle(cX,cY,50);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>if (cX &gt; 400) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>cX = 30;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>else if (cX &gt; 300) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>cX += 20;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>else if (cX &lt;= 400) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>cX += 10;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>}<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>if (cY &gt; 300) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>cY = 30;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>else if (cY &gt; 200) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>cY += 20;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>else if (cY &lt;= 300) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>cY += 15;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>fill(100,150,0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>rect(rX,rY,20,20);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>if (rX&gt;800){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>rX=0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>else if (rX&lt;=800){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>rX+=20;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>if (rY&lt;1){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>rY =400;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>else if (rY&gt;1){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>rY-=5;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span>}</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function createBorders(A,B,C){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>/*walls</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>A = 0</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>B =800</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>C =600</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>*/</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>fill(A);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>rect(A,450,300,20);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>rect(800,450,-300,20);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>strokeWeight(20);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>line(A,A,B,A);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>line(A,A,A,C);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>line(B,A,B,C);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>line(A,C,B,C);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>//doors</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>strokeWeight(12);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>//left door</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>line(300,450,lLX,lLY);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>//right door</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>line(rLX,rLY,500,450);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (rLX&gt;500 &amp;&amp; rLY&lt;350 &amp;&amp; lLX&lt;290 &amp;&amp; lLY&lt;350){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>rLX =400;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>rLY =450;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>lLX =390;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>lLY =450;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function createExit(){</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>//exit</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>fill(250);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>rect(5,10,50,10);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function createYouwin(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">           </span>//youwin</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">           </span>fill(150,50,0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">           </span>textSize(20);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">           </span>text('EXIT',10,20);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">           </span>if(x&lt;0 &amp;&amp; y&lt;0){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">               </span>fill(250,250,0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">               </span>textSize(50);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">               </span>text('YOU win',300,300);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">           </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span></span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function getRandomNumber(number) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return Math.floor(Math.random() * number) + 10;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1">function mousePressed()</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>mousex = mouseX;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>mousey = mouseY;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}<span class="Apple-converted-space">   </span></span></p>
+<p class="p1"><span class="s1">function keyPressed(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (key == 'w')</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>lLY-=100;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>lLX-=100;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>rLX+=100;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>rLY-=100;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+</body>
+</html>
